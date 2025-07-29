@@ -45,3 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackStats: {fileID: 11400000, guid: 15dccedb7e35e564baac440bd0313373, type: 2}
+  attackPriority: 1
+  attackName: Basic Attack
+  attackDescription: Does a basic attack.
