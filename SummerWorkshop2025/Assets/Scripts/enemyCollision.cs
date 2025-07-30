@@ -20,7 +20,7 @@ public class enemyCollision : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
-            Debug.Log("HIT");
+            GameManagerScript.instance.SwitchToTurnBased(true);
         }
        
     }

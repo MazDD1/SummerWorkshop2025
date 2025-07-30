@@ -1,0 +1,78 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GameManagerScript : MonoBehaviour
+{
+    public static GameManagerScript instance;
+
+    [SerializeField]
+    private GameObject freeMoveScreen;
+    [SerializeField]
+    private GameObject turnBasedScreen;
+
+    [SerializeField]
+    private bool FreeMoveActive;
+
+    private void Awake()
+    {
+        // If there is an instance, and it's not me, delete myself.
+
+        if (instance != null && instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+
+        DontDestroyOnLoad(gameObject);
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        FreeMoveActive = true;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (FreeMoveActive)
+            {
+                freeMoveScreen.SetActive(false);
+                turnBasedScreen.SetActive(true);
+                FreeMoveActive = false;
+
+            }
+            else
+            {
+                freeMoveScreen.SetActive(true);
+                turnBasedScreen.SetActive(false);
+                FreeMoveActive = true;
+            }
+
+
+        }
+    }
+
+    public void SwitchToTurnBased(bool turnBased)
+    {
+        if (turnBased)
+        {
+            freeMoveScreen.SetActive(false);
+            turnBasedScreen.SetActive(true);
+            FreeMoveActive = false;
+
+        }
+        else
+        {
+            freeMoveScreen.SetActive(true);
+            turnBasedScreen.SetActive(false);
+            FreeMoveActive = true;
+        }
+    }
+}
