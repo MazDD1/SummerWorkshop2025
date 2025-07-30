@@ -10,6 +10,8 @@ public class GameManagerScript : MonoBehaviour
     private GameObject freeMoveScreen;
     [SerializeField]
     private GameObject turnBasedScreen;
+    [SerializeField]
+    private TurnBasedLogic turnBasedLogicScript;
 
     [SerializeField]
     private bool FreeMoveActive;
@@ -61,18 +63,15 @@ public class GameManagerScript : MonoBehaviour
 
     public void SwitchToTurnBased(bool turnBased)
     {
+        Debug.Log(turnBased);
+        Debug.Log("Switching scenes");
+        freeMoveScreen.SetActive(!turnBased);
+        turnBasedScreen.SetActive(turnBased);
         if (turnBased)
         {
-            freeMoveScreen.SetActive(false);
-            turnBasedScreen.SetActive(true);
             FreeMoveActive = false;
-
-        }
-        else
-        {
-            freeMoveScreen.SetActive(true);
-            turnBasedScreen.SetActive(false);
-            FreeMoveActive = true;
+            turnBasedLogicScript.currentState = TurnBasedLogic.BattleStates.Start;
+            return;
         }
     }
 }

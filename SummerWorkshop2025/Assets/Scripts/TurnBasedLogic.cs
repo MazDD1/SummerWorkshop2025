@@ -175,11 +175,16 @@ public class TurnBasedLogic : MonoBehaviour
                 break;
 
             case BattleStates.PlayerAttackStart:
-                Play_Player_Attack();
                 currentState = BattleStates.Waiting;
+                Play_Player_Attack();
                 break;
             case BattleStates.EnemyAttackStart:
+                currentState = BattleStates.Waiting;
                 Play_Enemy_Attack();
+                break;
+            case BattleStates.End:
+                print("ENDING BATTLE");
+                GameManagerScript.instance.SwitchToTurnBased(false);
                 currentState = BattleStates.Waiting;
                 break;
 
@@ -291,6 +296,12 @@ public class TurnBasedLogic : MonoBehaviour
 
     public void Play_Enemy_Attack()
     {
+        if (enemyStats.health <= 0)
+        {
+            print("ENDING BATTLE");
+            currentState = BattleStates.End;
+            return;
+        }
         Animation playerAnimation = player.GetComponent<Animation>();
         if (playerAnimation.GetClip("CurrentAttack"))
         {

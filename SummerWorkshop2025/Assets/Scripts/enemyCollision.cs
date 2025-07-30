@@ -21,6 +21,7 @@ public class enemyCollision : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             GameManagerScript.instance.SwitchToTurnBased(true);
+            Destroy(gameObject);
         }
        
     }
