@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 37d559ba6c7900443a864f8b0dc89f52, type: 3}
-  m_Name: DefaultEnemyAttackStats
+  m_Name: Triple Attack
   m_EditorClassIdentifier: 
   statChange: 0
-  attackTarget: 0
+  attackTarget: 1
   damage: 20
   isPiercing: 0
-  attackAnimationName: {fileID: 7400000, guid: 58b827431a3b9db4c9cc4b60278af455, type: 2}
+  attackAnimationName: {fileID: 7400000, guid: 3d497b66383813a4c8428266a23ed8ab, type: 2}
   attackPriority: 1
-  attackName: 
+  attackName: Triple Attack
   attackDescription: 

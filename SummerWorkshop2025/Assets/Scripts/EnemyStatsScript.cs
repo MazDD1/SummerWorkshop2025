@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class HealthStatsScript : MonoBehaviour
 {
-    [SerializeField]
-    private HealthStatsScriptableObject baseStats;
+    // The base stats of the entity.
+    public HealthStatsScriptableObject baseStats;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    // The current health of the entity.
+    public float health;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // The current defense of the entity.
+    public float defense;
+
+    // Is the entity immune to damage?
+    public bool isImmune;
 }
