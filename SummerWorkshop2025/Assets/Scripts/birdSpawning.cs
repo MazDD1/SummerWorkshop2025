@@ -30,6 +30,6 @@ public class birdSpawning : MonoBehaviour
 
     void spawnBird()
     {
-        Instantiate(bird);
+        Instantiate(bird, this.transform);
     }
 }

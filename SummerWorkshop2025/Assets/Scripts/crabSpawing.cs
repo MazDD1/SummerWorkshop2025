@@ -30,6 +30,6 @@ public class crabSpawing : MonoBehaviour
 
     void spawnCrab()
     {
-        Instantiate(crab);
+        Instantiate(crab,this.transform);
     }
 }
