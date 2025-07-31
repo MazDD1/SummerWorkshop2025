@@ -16,7 +16,7 @@ MonoBehaviour:
   attackTarget: 1
   damage: -1.1
   isPiercing: 0
-  attackAnimationName: {fileID: 7400000, guid: 0ef54ebcd9898c64788f6267d4dbbecc, type: 2}
+  attackAnimationName: 
   attackPriority: 1
   attackName: Lower Enemy Defense
   attackDescription: 

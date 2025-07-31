@@ -11,6 +11,9 @@ public class AttackAnimationFunctionScripts : MonoBehaviour
     [SerializeField]
     private TurnBasedLogic mainLogic;
 
+    [SerializeField]
+    private SpriteRenderer defaultSprite;
+
     public void Player_Attack()
     {
         mainLogic.Player_Attack();
@@ -24,5 +27,14 @@ public class AttackAnimationFunctionScripts : MonoBehaviour
     public void Animation_End()
     {
         mainLogic.Attack_End(this.gameObject);
+    }
+
+    public void changeSprite(Sprite sprite)
+    {
+        if (sprite == null)
+        {
+            return;
+        }
+        defaultSprite.sprite = sprite;
     }
 }

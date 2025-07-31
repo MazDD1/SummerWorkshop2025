@@ -55,6 +55,17 @@ public class TurnBasedLogic : MonoBehaviour
 
     private bool inBattle = false;
 
+    public ShellTypeSO placeholderShell;
+
+
+    [SerializeField]
+    private Animator playerAnimator;
+    [SerializeField]
+    private Animator enemyAnimator;
+
+
+
+
     public enum AttackFields
     {
         Inventory,
@@ -137,6 +148,7 @@ public class TurnBasedLogic : MonoBehaviour
         enemyStats = enemy.GetComponent<HealthStatsScript>();
         enemyAttacks = enemy.GetComponent<AttackMachineScript>();
 
+
         currentState = BattleStates.Start;
     }
 
@@ -200,7 +212,10 @@ public class TurnBasedLogic : MonoBehaviour
 
     void Load_Shell()
     {
-        ShellTypeSO equippedShell = InventoryManagerScript.instance.currentShellType;
+        ShellTypeSO equippedShell = placeholderShell;
+        if (InventoryManagerScript.instance) {
+            equippedShell = InventoryManagerScript.instance.currentShellType;
+        }
         playerAttacks.attackStates = equippedShell.playerAttacks;
         abilityAttacks.attackStates = equippedShell.abilityAttacks;
         playerStats.baseStats = equippedShell.healthStats;
@@ -263,14 +278,9 @@ public class TurnBasedLogic : MonoBehaviour
         {
             if (playerStats.isImmune)
             {
-                spriteAnim.Play("DefendEndAnimation");
+                playerAnimator.Play("DefendEndAnimation");
                 playerStats.isImmune = false;
             }
-        }
-        Animation enemyAnimation = enemy.GetComponent<Animation>();
-        if (enemyAnimation.GetClip("CurrentAttack"))
-        {
-            enemyAnimation.RemoveClip("CurrentAttack");
         }
         menu.SetActive(true);
         isTurnPlayer = true;
@@ -320,15 +330,14 @@ public class TurnBasedLogic : MonoBehaviour
         inventoryMenu.gameObject.SetActive(false);
         abilityMenu.gameObject.SetActive(false);
         menu.SetActive(false);
-        Animation spriteAnim = player.GetComponent<Animation>();
         if (playerAttacks.currentState.statChange == AttackStatsScriptableObject.StatChange.NullifyDamage)
         {
-            spriteAnim.Play("DefendStartAnimation");
+            playerAnimator.Play("DefendStartAnimation");
             playerStats.isImmune = true;
             return;
         }
-        spriteAnim.AddClip(playerAttacks.currentState.attackAnimationName, "CurrentAttack");
-        spriteAnim.Play("CurrentAttack");
+        
+        playerAnimator.Play(playerAttacks.currentState.attackAnimationName);
     }
 
     void Player_Damage_Defense()
@@ -374,14 +383,7 @@ public class TurnBasedLogic : MonoBehaviour
             currentState = BattleStates.End;
             return;
         }
-        Animation playerAnimation = player.GetComponent<Animation>();
-        if (playerAnimation.GetClip("CurrentAttack"))
-        {
-            playerAnimation.RemoveClip("CurrentAttack");
-        }
-        Animation spriteAnim = enemy.GetComponent<Animation>();
-        spriteAnim.AddClip(enemyAttacks.currentState.attackAnimationName, "CurrentAttack");
-        spriteAnim.Play("CurrentAttack");
+        enemyAnimator.Play(enemyAttacks.currentState.attackAnimationName);
     }
 
     void Enemy_Damage_Defense()
