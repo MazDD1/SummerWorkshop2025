@@ -56,7 +56,7 @@ public class ItemManagerScript : MonoBehaviour
 
     public void PopulateItemInventory()
     {
-        foreach (ItemTypeSO itemType in itemTypes)
+        foreach (ItemTypeSO itemType in instance.itemTypes)
         {
             if(ItemInventory.ContainsKey(itemType))
             {
@@ -80,7 +80,7 @@ public class ItemManagerScript : MonoBehaviour
 
     public void ItemSpawner()
     {
-        foreach (ItemTypeSO itemType in itemTypes)
+        foreach (ItemTypeSO itemType in instance.itemTypes)
         {
             ItemButton = Instantiate<GameObject>(ItemButtonToSpawn, ButtonContainer.transform);
             ItemButton.transform.SetParent(ButtonContainer.transform);

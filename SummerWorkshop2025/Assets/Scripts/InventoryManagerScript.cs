@@ -65,9 +65,9 @@ public class InventoryManagerScript : MonoBehaviour
 
     public void PopulateShellInventory()
     {
-        foreach (ShellTypeSO shellType in shellTypes)
+        foreach (ShellTypeSO shellType in instance.shellTypes)
         {
-            inventory.Add(shellType.shellName,shellType);
+            instance.inventory.Add(shellType.shellName,shellType);
         }
     }
 
@@ -82,7 +82,7 @@ public class InventoryManagerScript : MonoBehaviour
 
     public void ShellSpawner()
     {
-        foreach(ShellTypeSO shellType in shellTypes)
+        foreach(ShellTypeSO shellType in instance.shellTypes)
         {
             ShellButton = Instantiate<GameObject>(ShellButtonToSpawn, ButtonContainer.transform);
             ShellButton.transform.SetParent(ButtonContainer.transform);
