@@ -15,7 +15,10 @@ MonoBehaviour:
   shellName: Default Shell
   shellImage: {fileID: 21300000, guid: fa5c2b5070bca7f4780030555e091868, type: 3}
   moveSpeed: 200
-  healthStats: {fileID: 0}
+  healthStats: {fileID: 11400000, guid: 056ff458cec09b44b8eb2bb39bb28e50, type: 2}
   playerAttacks:
-  - {fileID: 0}
-  abilityAttacks: []
+  - {fileID: 11400000, guid: 075cd427348c61545b010f64163cd770, type: 2}
+  - {fileID: 11400000, guid: 9b33e52237ad0a840895e55f7ceba8ae, type: 2}
+  abilityAttacks:
+  - {fileID: 11400000, guid: 06f0e236c66f4e74d83ff733f6110e33, type: 2}
+  - {fileID: 11400000, guid: 17c3a348fa8f29c4eadb32c22ad1daa9, type: 2}
