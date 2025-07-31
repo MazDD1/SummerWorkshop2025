@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b63697a240d7742ac1c83eb5af7aa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  crabSpeed: 2
+  crabSpeed: 4
   player: {fileID: 0}
   maxDirectionSwitchTime: 1
   minDirectionSwitchTime: 2

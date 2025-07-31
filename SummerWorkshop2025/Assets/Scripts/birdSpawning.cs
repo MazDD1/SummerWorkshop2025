@@ -33,3 +33,4 @@ public class birdSpawning : MonoBehaviour
         Instantiate(bird, this.transform);
     }
 }
+ 
