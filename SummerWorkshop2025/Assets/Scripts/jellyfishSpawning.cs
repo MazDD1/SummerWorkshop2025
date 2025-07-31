@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class birdSpawning : MonoBehaviour
+public class jellyfishSpawning : MonoBehaviour
 {
-    public GameObject bird;
+    public GameObject jellyfish;
     private float timer = 0;
     public float respawnTime;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class birdSpawning : MonoBehaviour
     {
         if (timer >= respawnTime)
         {
-            spawnBird();
+            spawnJellyfish();
             timer = 0;
         }
         else
@@ -28,9 +28,8 @@ public class birdSpawning : MonoBehaviour
         }
     }
 
-    void spawnBird()
+    void spawnJellyfish()
     {
-        Instantiate(bird, this.transform);
+        Instantiate(jellyfish, this.transform);
     }
 }
- 

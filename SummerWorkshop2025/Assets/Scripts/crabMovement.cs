@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class crabMovement : MonoBehaviour
 {
@@ -23,12 +24,12 @@ public class crabMovement : MonoBehaviour
         if (randNum == 0)
         {
             crabType = "leftStart";
-            transform.position = new Vector3(-10, Random.Range(-4.5f, 4.5f), 0);
+            transform.position = new Vector3(-10, player.GetComponent<Transform>().position.y + Random.Range(-6, 3), 0);
         }
         else
         {
             crabType = "rightStart";
-            transform.position = new Vector3(10, Random.Range(-4.5f, 4.5f), 0);
+            transform.position = new Vector3(10, player.GetComponent<Transform>().position.y + Random.Range(-6, 3), 0);
         }
     }
 

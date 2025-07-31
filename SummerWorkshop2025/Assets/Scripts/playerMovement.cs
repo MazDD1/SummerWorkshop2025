@@ -7,11 +7,16 @@ using UnityEngineInternal;
 public class NewBehaviourScript : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
+    public Sprite turtle1;
+    public Sprite turtle2;
     public float playerSpeed;
     public float rightBorder;
     public float leftBorder;
     public float topBorder;
     public float bottomBorder;
+    private float timer = 0;
+    public float spriteSwitchTime;
 
     private Vector2 movement;
     float moveLimiter = 0.7f;
@@ -20,6 +25,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Start()
     {
        rb = GetComponent<Rigidbody2D>();
+       spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -41,12 +47,37 @@ public class NewBehaviourScript : MonoBehaviour
         
     }
 
+    void switchSprite()
+    {
+        if (movement.x != 0 || movement.y != 0)
+        {
+            if (spriteRenderer.sprite == turtle1)
+            {
+                spriteRenderer.sprite = turtle2;
+            }
+            else if (spriteRenderer.sprite = turtle2)
+            {
+                spriteRenderer.sprite = turtle1;
+            }
+        }
+    }
+
     // Update is called once per frame
     void Update()
     {
 
         movement.x = Input.GetAxisRaw("Horizontal");
         movement.y = Input.GetAxisRaw("Vertical");
+
+        if (timer >= spriteSwitchTime)
+        {
+            switchSprite();
+            timer = 0;
+        }
+        else
+        {
+            timer += Time.deltaTime;
+        }
 
         /*
         if (Input.GetAxisRaw("Horizontal") == 1 && transform.position.x < rightBorder)
