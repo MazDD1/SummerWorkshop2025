@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class AttackMachineScript : MonoBehaviour
 {
+
     [SerializeField]
-    private GameObject currentState;
+    public AttackStatsScriptableObject currentState;
     [SerializeField]
-    private AttackStateScript[] attackStates;
+    public AttackStatsScriptableObject[] attackStates;
 }

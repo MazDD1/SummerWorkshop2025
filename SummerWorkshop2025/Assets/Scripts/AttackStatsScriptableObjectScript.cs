@@ -17,4 +17,8 @@ public class AttackStatsScriptableObject : ScriptableObject
     public float damage;
     public bool isPiercing;
     public AnimationClip attackAnimationName;
+
+    public int attackPriority = 1;
+    public string attackName;
+    public string attackDescription;
 }

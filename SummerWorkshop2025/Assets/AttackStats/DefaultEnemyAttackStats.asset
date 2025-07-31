@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: DefaultEnemyAttackStats
   m_EditorClassIdentifier: 
   statChange: 0
-  attackTarget: 1
+  attackTarget: 0
   damage: 20
   isPiercing: 0
   attackAnimationName: {fileID: 7400000, guid: 58b827431a3b9db4c9cc4b60278af455, type: 2}
+  attackPriority: 1
+  attackName: 
+  attackDescription: 
