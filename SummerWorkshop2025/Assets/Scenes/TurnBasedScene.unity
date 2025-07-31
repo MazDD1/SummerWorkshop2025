@@ -1078,8 +1078,6 @@ MonoBehaviour:
   attackStates:
   - {fileID: 11400000, guid: 15dccedb7e35e564baac440bd0313373, type: 2}
   - {fileID: 11400000, guid: e822a2dc65d58364a89adc9f3abcfc37, type: 2}
-  - {fileID: 11400000, guid: e822a2dc65d58364a89adc9f3abcfc37, type: 2}
-  - {fileID: 11400000, guid: e822a2dc65d58364a89adc9f3abcfc37, type: 2}
 --- !u!114 &475830967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2189,7 +2187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: {fileID: 0}
   attackStates:
-  - {fileID: 11400000, guid: 57fa6279462f3c847837f819928bf844, type: 2}
+  - {fileID: 11400000, guid: 17c3a348fa8f29c4eadb32c22ad1daa9, type: 2}
   - {fileID: 11400000, guid: 06f0e236c66f4e74d83ff733f6110e33, type: 2}
   - {fileID: 0}
   - {fileID: 0}

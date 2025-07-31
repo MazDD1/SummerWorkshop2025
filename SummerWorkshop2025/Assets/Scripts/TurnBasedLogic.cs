@@ -53,6 +53,8 @@ public class TurnBasedLogic : MonoBehaviour
     [SerializeField]
     private Animator actionAnimation;
 
+    private bool inBattle = false;
+
     public enum AttackFields
     {
         Inventory,
@@ -160,7 +162,10 @@ public class TurnBasedLogic : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Animate_Healthbar();
+        if (inBattle)
+        {
+            Animate_Healthbar();
+        }
         if (actionCounter != -cooldownFrames)
         {
             actionCounter--;
@@ -191,6 +196,14 @@ public class TurnBasedLogic : MonoBehaviour
         {
             enemyHealthFill.SetActive(true);
         }
+    }
+
+    void Load_Shell()
+    {
+        ShellTypeSO equippedShell = InventoryManagerScript.instance.currentShellType;
+        playerAttacks.attackStates = equippedShell.playerAttacks;
+        abilityAttacks.attackStates = equippedShell.abilityAttacks;
+        playerStats.baseStats = equippedShell.healthStats;
     }
 
 
@@ -229,6 +242,7 @@ public class TurnBasedLogic : MonoBehaviour
     }
     void Start_Turn_Based_Combat()
     {
+        Load_Shell();
         Assign_Buttons(AttackFields.Ability);
         Assign_Buttons(AttackFields.Inventory);
         playerStats.defense = playerStats.baseStats.defenseMultiplier;
@@ -239,6 +253,7 @@ public class TurnBasedLogic : MonoBehaviour
         enemyHealthUI.maxValue = enemyStats.baseStats.maxHealth;
         playerHealthUI.value = playerStats.baseStats.maxHealth;
         enemyHealthUI.value = enemyStats.baseStats.maxHealth;
+        inBattle = true;
     }
 
     void Start_Turn()

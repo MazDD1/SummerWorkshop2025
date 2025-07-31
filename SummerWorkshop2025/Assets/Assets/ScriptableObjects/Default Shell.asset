@@ -16,5 +16,6 @@ MonoBehaviour:
   shellImage: {fileID: 21300000, guid: fa5c2b5070bca7f4780030555e091868, type: 3}
   moveSpeed: 200
   healthStats: {fileID: 0}
-  playerAttacks: []
+  playerAttacks:
+  - {fileID: 0}
   abilityAttacks: []
