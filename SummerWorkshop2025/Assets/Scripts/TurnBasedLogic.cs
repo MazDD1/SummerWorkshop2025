@@ -40,10 +40,20 @@ public class TurnBasedLogic : MonoBehaviour
     [SerializeField]
     private Slider playerHealthUI;
     [SerializeField]
+    private GameObject playerHealthFill;
+    [SerializeField] 
+    private TextMeshProUGUI playerDefenseUI;
+    [SerializeField]
     private Slider enemyHealthUI;
+    [SerializeField] 
+    private GameObject enemyHealthFill;
+    [SerializeField]
+    private TextMeshProUGUI enemyDefenseUI;
 
     [SerializeField]
     private Animator actionAnimation;
+
+    private bool inBattle = false;
 
     public enum AttackFields
     {
@@ -152,11 +162,50 @@ public class TurnBasedLogic : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (inBattle)
+        {
+            Animate_Healthbar();
+        }
         if (actionCounter != -cooldownFrames)
         {
             actionCounter--;
         }
     }
+
+    private void Animate_Healthbar()
+    {
+        enemyDefenseUI.text = "Fragility: " + (enemyStats.defense).ToString();
+        playerDefenseUI.text = "Fragility: " + (playerStats.defense).ToString();
+
+        enemyHealthUI.value = Mathf.Lerp(enemyHealthUI.value, enemyStats.health, 0.1f);
+        playerHealthUI.value = Mathf.Lerp(playerHealthUI.value, playerStats.health, 0.1f);
+        if (playerHealthUI.value <= 0)
+        {
+            playerHealthFill.SetActive(false);
+
+        }
+        else
+        {
+            playerHealthFill.SetActive(true);
+        }
+        if (enemyHealthUI.value <= 0)
+        {
+            enemyHealthFill.SetActive(false);
+        }
+        else
+        {
+            enemyHealthFill.SetActive(true);
+        }
+    }
+
+    void Load_Shell()
+    {
+        ShellTypeSO equippedShell = InventoryManagerScript.instance.currentShellType;
+        playerAttacks.attackStates = equippedShell.playerAttacks;
+        abilityAttacks.attackStates = equippedShell.abilityAttacks;
+        playerStats.baseStats = equippedShell.healthStats;
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -193,14 +242,18 @@ public class TurnBasedLogic : MonoBehaviour
     }
     void Start_Turn_Based_Combat()
     {
+        Load_Shell();
         Assign_Buttons(AttackFields.Ability);
         Assign_Buttons(AttackFields.Inventory);
+        playerStats.defense = playerStats.baseStats.defenseMultiplier;
         playerStats.health = playerStats.baseStats.maxHealth;
+        enemyStats.defense = enemyStats.baseStats.defenseMultiplier;
         enemyStats.health = enemyStats.baseStats.maxHealth;
         playerHealthUI.maxValue = playerStats.baseStats.maxHealth;
         enemyHealthUI.maxValue = enemyStats.baseStats.maxHealth;
         playerHealthUI.value = playerStats.baseStats.maxHealth;
         enemyHealthUI.value = enemyStats.baseStats.maxHealth;
+        inBattle = true;
     }
 
     void Start_Turn()
@@ -240,19 +293,23 @@ public class TurnBasedLogic : MonoBehaviour
             maxPriority += enemyAttacks.attackStates[i].attackPriority;
             attackPriority[i] = maxPriority;
         }
-
-        int randomAttack = UnityEngine.Random.Range(1, maxPriority);
+        print("Max Priority: " + maxPriority.ToString());
+        int randomAttack = UnityEngine.Random.Range(0, maxPriority);
+        print("Random attack: " + randomAttack.ToString());
         for (int i = 0; i < attackPriority.Length; i++)
         {
-            if (attackPriority[i] > randomAttack)
+            if (attackPriority[i] <= randomAttack)
             {
+                print("Not selected attack: " + attackPriority[i].ToString());
                 print(attackPriority[i]);
                 print(randomAttack);
                 print(attackPriority[i] > randomAttack);
                 continue;
             }
-            print(enemyAttacks.attackStates[i]);
-            return enemyAttacks.attackStates[i];
+            int finalIndex = i;
+            print("ATTACK SELECTED: " + (attackPriority[i] > randomAttack).ToString());
+            print("Selected attack: " + attackPriority[finalIndex].ToString());
+            return enemyAttacks.attackStates[finalIndex];
         }
         print("null");
         return null;
@@ -274,24 +331,39 @@ public class TurnBasedLogic : MonoBehaviour
         spriteAnim.Play("CurrentAttack");
     }
 
-    public void Player_Attack()
+    void Player_Damage_Defense()
     {
         if (playerAttacks.currentState.attackTarget == AttackStatsScriptableObject.AttackTarget.Player)
         {
+            playerStats.defense -= playerAttacks.currentState.damage;
+            return;
+        }
+        enemyStats.defense -= playerAttacks.currentState.damage;
+
+
+    }
+
+    public void Player_Attack()
+    {
+        if (playerAttacks.currentState.statChange == AttackStatsScriptableObject.StatChange.Defense)
+        {
+            Player_Damage_Defense();
+            return;
+        }
+        if (playerAttacks.currentState.attackTarget == AttackStatsScriptableObject.AttackTarget.Player)
+        {
             playerStats.health -= playerAttacks.currentState.damage;
-            playerHealthUI.value = playerStats.health;
             return;
         }
         if (actionCounter >= 0)
         {
             actionCounter = -cooldownFrames;
-            enemyStats.health -= playerAttacks.currentState.damage*1.6f;
+            enemyStats.health -= (playerAttacks.currentState.damage*1.6f)* enemyStats.defense;
         }
         else
         {
-            enemyStats.health -= playerAttacks.currentState.damage;
+            enemyStats.health -= playerAttacks.currentState.damage * enemyStats.defense;
         }
-        enemyHealthUI.value = enemyStats.health;
     }
 
     public void Play_Enemy_Attack()
@@ -312,8 +384,25 @@ public class TurnBasedLogic : MonoBehaviour
         spriteAnim.Play("CurrentAttack");
     }
 
+    void Enemy_Damage_Defense()
+    {
+        if (enemyAttacks.currentState.attackTarget == AttackStatsScriptableObject.AttackTarget.Enemy)
+        {
+            enemyStats.defense -= enemyAttacks.currentState.damage;
+            return;
+        }
+        playerStats.defense -= enemyAttacks.currentState.damage;
+
+
+    }
+
     public void Enemy_Attack()
     {
+        if (enemyAttacks.currentState.statChange == AttackStatsScriptableObject.StatChange.Defense)
+        {
+            Enemy_Damage_Defense();
+            return;
+        }
         if (enemyAttacks.currentState.attackTarget == AttackStatsScriptableObject.AttackTarget.Player)
         {
             float damage = enemyAttacks.currentState.damage;
@@ -328,11 +417,9 @@ public class TurnBasedLogic : MonoBehaviour
 
             }
             playerStats.health -= damage;
-            playerHealthUI.value = playerStats.health;
             return;
         }
-        enemyStats.health -= enemyAttacks.currentState.damage;
-        enemyHealthUI.value = enemyStats.health;
+        enemyStats.health -= enemyAttacks.currentState.damage * playerStats.defense;
 
     }
 

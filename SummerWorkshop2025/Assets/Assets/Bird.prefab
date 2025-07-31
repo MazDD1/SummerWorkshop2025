@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: ba5bb06b5cc6abd43a95b85923f7b4b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -151,4 +151,4 @@ MonoBehaviour:
   bird1: {fileID: 21300000, guid: ba5bb06b5cc6abd43a95b85923f7b4b9, type: 3}
   bird2: {fileID: 21300000, guid: 6850e23a17738114f9112a86b666513e, type: 3}
   bird3: {fileID: 21300000, guid: eb4abd8ae04f2f94b9e29f6a6b5ac964, type: 3}
-  spriteSwitchTime: 0.4
+  spriteSwitchTime: 0.5

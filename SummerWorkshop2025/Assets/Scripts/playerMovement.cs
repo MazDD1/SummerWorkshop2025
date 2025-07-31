@@ -26,6 +26,7 @@ public class NewBehaviourScript : MonoBehaviour
     {
        rb = GetComponent<Rigidbody2D>();
        spriteRenderer = GetComponent<SpriteRenderer>();
+       playerSpeed = InventoryManagerScript.instance.currentShellType.moveSpeed;
     }
 
     private void FixedUpdate()
@@ -60,6 +61,11 @@ public class NewBehaviourScript : MonoBehaviour
                 spriteRenderer.sprite = turtle1;
             }
         }
+    }
+
+    public void InitialiseData()
+    {
+        playerSpeed = InventoryManagerScript.instance.currentShellType.moveSpeed;
     }
 
     // Update is called once per frame
