@@ -61,11 +61,11 @@ public class birdMovement : MonoBehaviour
             {
                 spriteRenderer.sprite = bird2;
             }
-            else if (spriteRenderer.sprite = bird2)
+            else if (spriteRenderer.sprite == bird2)
             {
                 spriteRenderer.sprite = bird3;
             }
-            else if (spriteRenderer.sprite = bird3)
+            else if (spriteRenderer.sprite == bird3)
             {
                 spriteRenderer.sprite = bird1;
             }

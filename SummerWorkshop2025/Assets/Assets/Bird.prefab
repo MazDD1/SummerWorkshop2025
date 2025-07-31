@@ -146,9 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb9bd736c464fcd409c6b8d235c42082, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  birdSpeed: 15
+  birdSpeed: 4
   player: {fileID: 0}
   bird1: {fileID: 21300000, guid: ba5bb06b5cc6abd43a95b85923f7b4b9, type: 3}
   bird2: {fileID: 21300000, guid: 6850e23a17738114f9112a86b666513e, type: 3}
   bird3: {fileID: 21300000, guid: eb4abd8ae04f2f94b9e29f6a6b5ac964, type: 3}
-  spriteSwitchTime: 0.5
+  spriteSwitchTime: 0.4
