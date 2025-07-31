@@ -468,7 +468,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &87190377
 Transform:
   m_ObjectHideFlags: 0
@@ -2928,7 +2928,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 852341443}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -3.5481734, y: 10.675883, z: -0.16359395}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2939,7 +2939,7 @@ Transform:
   - {fileID: 1570658042}
   - {fileID: 1883634766}
   - {fileID: 924126503}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1118314187}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &870578128
 GameObject:
@@ -3052,7 +3052,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &921554006
 Transform:
   m_ObjectHideFlags: 0
@@ -3941,6 +3941,7 @@ Transform:
   m_Children:
   - {fileID: 1756717458}
   - {fileID: 1806412698}
+  - {fileID: 852341444}
   - {fileID: 746692508}
   - {fileID: 370748294}
   - {fileID: 608240301}
@@ -5025,6 +5026,10 @@ PrefabInstance:
     - target: {fileID: 3625394781621351330, guid: 46813457860dd364ab4c7bf055fd201d, type: 3}
       propertyPath: m_Name
       value: Bird
+      objectReference: {fileID: 0}
+    - target: {fileID: 3625394781621351330, guid: 46813457860dd364ab4c7bf055fd201d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6143285251298565058, guid: 46813457860dd364ab4c7bf055fd201d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6968,4 +6973,3 @@ SceneRoots:
   - {fileID: 659807744}
   - {fileID: 1069766877}
   - {fileID: 559368642}
-  - {fileID: 852341444}
