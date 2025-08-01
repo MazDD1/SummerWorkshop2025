@@ -13,7 +13,7 @@ public class jellyfishMovement : MonoBehaviour
                   // 0 birds start left, 1 birds start right
     {
         player = GameObject.FindWithTag("Player");
-        transform.position = new Vector3(Random.Range(-4, 4), -20 , 0);
+        transform.position = new Vector3(Random.Range(-4, 4), -42 , 0);
     }
 
     // Update is called once per frame

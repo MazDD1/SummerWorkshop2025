@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class restTrigger : MonoBehaviour
 {
@@ -19,7 +20,11 @@ public class restTrigger : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("Rest");
+            GameObject restSite = GameObject.FindGameObjectWithTag("RestSite");
+            restSite.SetActive(true);
+            SceneManager.LoadScene("Level 2");
+            
+            
         }
 
     }

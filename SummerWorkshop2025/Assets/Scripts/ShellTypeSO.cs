@@ -14,4 +14,8 @@ public class ShellTypeSO : ScriptableObject
     public AttackStatsScriptableObject[] playerAttacks;
     public AttackStatsScriptableObject[] abilityAttacks;
 
+    public Animation idleAnim;
+    public Animation defendAnimStart;
+    public Animation defendAnimEnd;
+
 }

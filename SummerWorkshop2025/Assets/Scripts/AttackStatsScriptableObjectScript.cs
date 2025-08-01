@@ -16,7 +16,7 @@ public class AttackStatsScriptableObject : ScriptableObject
     // Subtract this number from the stat set in the statChange variable, negative numbers heal the stat. NullifyDamage does not use this variable.
     public float damage;
     public bool isPiercing;
-    public AnimationClip attackAnimationName;
+    public string attackAnimationName;
 
     public int attackPriority = 1;
     public string attackName;

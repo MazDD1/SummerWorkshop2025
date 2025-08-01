@@ -65,13 +65,9 @@ public class InventoryManagerScript : MonoBehaviour
 
     public void PopulateShellInventory()
     {
-        foreach (ShellTypeSO shellType in shellTypes)
+        foreach (ShellTypeSO shellType in instance.shellTypes)
         {
-            inventory.Add(shellType.shellName,shellType);
-            // error - different varaible types?
-            // inventory.Add(shellType.shellNumber,shellType);
-            // inventory.Add(shellType.shellImage, shellType);
-
+            instance.inventory.Add(shellType.shellName,shellType);
         }
     }
 
@@ -86,12 +82,13 @@ public class InventoryManagerScript : MonoBehaviour
 
     public void ShellSpawner()
     {
-        foreach(ShellTypeSO shellType in shellTypes)
+        foreach(ShellTypeSO shellType in instance.shellTypes)
         {
-            ShellButton = (GameObject)Instantiate(ShellButtonToSpawn);
+            ShellButton = Instantiate<GameObject>(ShellButtonToSpawn, ButtonContainer.transform);
             ShellButton.transform.SetParent(ButtonContainer.transform);
-            Text buttonText = ShellButton.GetComponentInChildren<Text>();
-            buttonText.text = shellType.shellName;
+            ShellButtonScript SBS = ShellButton.GetComponent<ShellButtonScript>();
+            SBS.buttonImage.sprite = shellType.shellImage;
+            SBS.buttonText.text = shellType.shellName;
             Button button = ShellButton.GetComponent<Button>();
             button.onClick.AddListener(() => ButtonOnClick(shellType.shellName));
         }
@@ -122,56 +119,3 @@ public class InventoryManagerScript : MonoBehaviour
     }
 
 }
-
-
-/*   
- *   public void MoveToInventoryScene ()
-    {
-        SceneManager.LoadSceneAsync("InventoryScene");
-    }
-    public void MoveToRestScene ()
-    {
-        SceneManager.LoadSceneAsync("RestScene");
-    }
-
-    public void Inventory1 ()
-    {
-        Debug.Log("Slot 1 Selected");
-        InventorySelectionStatus.text = "Slot 1 selected";
-    }
-    public void Inventory2()
-    {
-        Debug.Log("Slot 2 Selected");
-        InventorySelectionStatus.text = "Slot 2 selected";
-    }
-    public void Inventory3()
-    {
-        Debug.Log("Slot 3 Selected");
-        InventorySelectionStatus.text = "Slot 3 selected";
-    }
-    public void Inventory4()
-    {
-        Debug.Log("Slot 4 Selected");
-        InventorySelectionStatus.text = "Slot 4 selected";
-    }
-    public void Inventory5()
-    {
-        Debug.Log("Slot 5 Selected");
-        InventorySelectionStatus.text = "Slot 5 selected";
-    }
-    public void Inventory6()
-    {
-        Debug.Log("Slot 6 Selected");
-        InventorySelectionStatus.text = "Slot 6 selected";
-    }
-    public void Inventory7()
-    {
-        Debug.Log("Slot 7 Selected");
-        InventorySelectionStatus.text = "Slot 7 selected";
-    }
-    public void Inventory8()
-    {
-        Debug.Log("Slot 8 Selected");
-        InventorySelectionStatus.text = "Slot 8 selected";
-    }
-*/
