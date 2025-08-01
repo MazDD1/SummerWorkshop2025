@@ -115,6 +115,13 @@ public class ItemManagerScript : MonoBehaviour
         }
     }
 
+    public void UnequipItem ()
+    {
+        currentItemType = null;
+        Debug.Log(currentItemType);
+        EquippedText.text = "No Items equiped";
+    }
+
 
     // Update is called once per frame
     void Update()

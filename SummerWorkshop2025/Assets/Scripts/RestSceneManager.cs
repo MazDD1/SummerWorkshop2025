@@ -50,7 +50,9 @@ public class RestSceneManager : MonoBehaviour
 
     public void SwitchToFreeMove()
     {
-        RestAndInventoryScreen.SetActive(false);
+        RestScene.SetActive(false);
+        InventoryScene.SetActive(false);
+        RestAndInventoryScreen.SetActive(false); 
         FreeMoveScreen.SetActive(true);
     }
 }
