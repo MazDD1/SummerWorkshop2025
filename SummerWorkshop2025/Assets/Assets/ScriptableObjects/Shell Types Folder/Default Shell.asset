@@ -22,7 +22,7 @@ MonoBehaviour:
   abilityAttacks:
   - {fileID: 11400000, guid: 14aae05bf62dbd54dac36a56c26200ea, type: 2}
   - {fileID: 11400000, guid: 6ed52509470b78d488c546955079e4f4, type: 2}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 2869fdc99f1572d498c7b84df2387cbc, type: 2}
   idleAnim: DefaultShellIdleAnimation
   defendAnimStart: DefaultShellDefendStartAnimation
   defendAnimEnd: DefaultShellDefendEndAnimation

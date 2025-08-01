@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d98e5cc08376ac74896aec0a39e9775e, type: 3}
+  m_Name: Crab
+  m_EditorClassIdentifier: 
+  healthStats: {fileID: 11400000, guid: 1189962b3a72363429f12c1d13636c1f, type: 2}
+  enemyAttacks:
+  - {fileID: 11400000, guid: 97c6c6971628413418efe8226bc9b5d8, type: 2}
+  idleAnim: CrabIdleAnimation

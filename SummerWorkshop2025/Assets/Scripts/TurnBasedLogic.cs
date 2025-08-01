@@ -224,6 +224,7 @@ public class TurnBasedLogic : MonoBehaviour
 
         enemyAttacks.attackStates = currentEnemy.enemyAttacks;
         enemyStats.baseStats = currentEnemy.healthStats;
+        enemyAnimator.Play(currentEnemy.idleAnim);
     }
 
 
@@ -423,10 +424,10 @@ public class TurnBasedLogic : MonoBehaviour
                 damage *= 0.5f;
 
             }
-            playerStats.health -= damage;
+            playerStats.health -= damage * playerStats.defense;
             return;
         }
-        enemyStats.health -= enemyAttacks.currentState.damage * playerStats.defense;
+        enemyStats.health -= enemyAttacks.currentState.damage;
 
     }
 
@@ -434,8 +435,6 @@ public class TurnBasedLogic : MonoBehaviour
     {
         print("attack ended");
         playerAnimator.Play(equippedShell.idleAnim);
-        enemyAnimator.Play(currentEnemy.idleAnim);
-
         if (entity == player)
         {
             print("is a player attack");
@@ -444,6 +443,7 @@ public class TurnBasedLogic : MonoBehaviour
         else
         {
             print("is an enemy attack");
+            enemyAnimator.Play(currentEnemy.idleAnim);
             currentState = BattleStates.TurnStart;
         }
     }

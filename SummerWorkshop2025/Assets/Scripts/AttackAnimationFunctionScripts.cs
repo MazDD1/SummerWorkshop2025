@@ -26,15 +26,8 @@ public class AttackAnimationFunctionScripts : MonoBehaviour
 
     public void Animation_End()
     {
+        print("Animation ended");
         mainLogic.Attack_End(this.gameObject);
     }
 
-    public void changeSprite(Sprite sprite)
-    {
-        if (sprite == null)
-        {
-            return;
-        }
-        defaultSprite.sprite = sprite;
-    }
 }
