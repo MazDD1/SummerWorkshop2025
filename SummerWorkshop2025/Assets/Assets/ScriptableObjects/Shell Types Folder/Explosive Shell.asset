@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Explosive Shell
   m_EditorClassIdentifier: 
   shellName: Explosive Shell
-  shellImage: {fileID: 21300000, guid: a7c1525b0f2272d448a239a0ba31504a, type: 3}
+  shellImage: {fileID: 21300000, guid: 189be40f1d551214d8cb2b2e87048409, type: 3}
   moveSpeed: 200
   healthStats: {fileID: 0}
   playerAttacks: []
