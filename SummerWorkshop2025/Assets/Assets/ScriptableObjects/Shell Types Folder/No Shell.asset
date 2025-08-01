@@ -18,3 +18,6 @@ MonoBehaviour:
   healthStats: {fileID: 0}
   playerAttacks: []
   abilityAttacks: []
+  idleAnim: {fileID: 0}
+  defendAnimStart: {fileID: 0}
+  defendAnimEnd: {fileID: 0}

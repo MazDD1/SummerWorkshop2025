@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Default Shell
   m_EditorClassIdentifier: 
   shellName: Default Shell
-  shellImage: {fileID: 21300000, guid: d822dddadef2dd54aa665da55c4191b3, type: 3}
+  shellImage: {fileID: 21300000, guid: 9941cf71773710e4e8cdcc237f953363, type: 3}
   moveSpeed: 200
   healthStats: {fileID: 0}
   playerAttacks: []
