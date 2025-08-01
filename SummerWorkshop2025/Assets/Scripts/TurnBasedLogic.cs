@@ -245,6 +245,10 @@ public class TurnBasedLogic : MonoBehaviour
                 break;
 
             case BattleStates.PlayerAttackStart:
+                if(playerStats.health <= 0)
+                {
+                    GameManagerScript.instance.ShowDeathScreen();
+                }
                 currentState = BattleStates.Waiting;
                 Play_Player_Attack();
                 break;
