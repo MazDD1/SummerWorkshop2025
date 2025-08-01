@@ -5,10 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class restTrigger : MonoBehaviour
 {
+    GameObject restSite;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -20,9 +22,17 @@ public class restTrigger : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            GameObject restSite = GameObject.FindGameObjectWithTag("RestSite");
-            restSite.SetActive(true);
-            SceneManager.LoadScene("Level 2");
+            Scene scene = SceneManager.GetActiveScene();
+            GameManagerScript.instance.restSiteScreen.SetActive(true);
+            if (scene.name == "CombinedScene")
+            {
+                SceneManager.LoadScene("Level 2");
+            }
+            else if (scene.name == "Level 2")
+            {
+                SceneManager.LoadScene("Level 3");
+            }
+            
             
             
         }
