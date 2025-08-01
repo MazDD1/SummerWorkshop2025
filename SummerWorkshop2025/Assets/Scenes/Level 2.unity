@@ -280,6 +280,7 @@ GameObject:
   - component: {fileID: 53478264}
   - component: {fileID: 53478263}
   - component: {fileID: 53478262}
+  - component: {fileID: 53478265}
   m_Layer: 0
   m_Name: Suncream
   m_TagString: Untagged
@@ -424,6 +425,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &53478265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53478260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95686dbd351938a4892ca5fb52717860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &102268843
 GameObject:
   m_ObjectHideFlags: 0
@@ -569,6 +582,7 @@ GameObject:
   - component: {fileID: 112935410}
   - component: {fileID: 112935412}
   - component: {fileID: 112935411}
+  - component: {fileID: 112935413}
   m_Layer: 0
   m_Name: Rock (1)
   m_TagString: Untagged
@@ -678,6 +692,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &112935413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112935409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95686dbd351938a4892ca5fb52717860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &157923415
 GameObject:
   m_ObjectHideFlags: 0
@@ -1260,6 +1286,10 @@ MonoBehaviour:
   enemyHealthFill: {fileID: 2019887610}
   enemyDefenseUI: {fileID: 834750046}
   actionAnimation: {fileID: 45969973}
+  placeholderShell: {fileID: 0}
+  playerAnimator: {fileID: 0}
+  enemyAnimator: {fileID: 0}
+  currentEnemy: {fileID: 0}
   currentState: 0
 --- !u!4 &323240606
 Transform:
@@ -1466,11 +1496,11 @@ GameObject:
   - component: {fileID: 376659957}
   m_Layer: 0
   m_Name: TurnBasedScreen
-  m_TagString: Untagged
+  m_TagString: TurnBased
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &376659957
 Transform:
   m_ObjectHideFlags: 0
@@ -1537,7 +1567,7 @@ RectTransform:
   m_Father: {fileID: 1851398908}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -1613,10 +1643,10 @@ RectTransform:
   - {fileID: 1863973841}
   m_Father: {fileID: 1767645969}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 125, y: -200}
-  m_SizeDelta: {x: 250, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &457954990
 MonoBehaviour:
@@ -1880,11 +1910,11 @@ GameObject:
   - component: {fileID: 571420808}
   m_Layer: 0
   m_Name: FreeMoveScreen
-  m_TagString: Untagged
+  m_TagString: FreeMove
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &571420808
 Transform:
   m_ObjectHideFlags: 0
@@ -2657,6 +2687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainLogic: {fileID: 323240605}
+  defaultSprite: {fileID: 0}
 --- !u!111 &780830014
 Animation:
   m_ObjectHideFlags: 0
@@ -3236,6 +3267,7 @@ GameObject:
   - component: {fileID: 846338844}
   - component: {fileID: 846338846}
   - component: {fileID: 846338845}
+  - component: {fileID: 846338847}
   m_Layer: 0
   m_Name: Rock (3)
   m_TagString: Untagged
@@ -3345,6 +3377,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &846338847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846338843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95686dbd351938a4892ca5fb52717860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &878405482
 GameObject:
   m_ObjectHideFlags: 0
@@ -3356,6 +3400,7 @@ GameObject:
   - component: {fileID: 878405483}
   - component: {fileID: 878405485}
   - component: {fileID: 878405484}
+  - component: {fileID: 878405486}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Untagged
@@ -3465,6 +3510,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &878405486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 878405482}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95686dbd351938a4892ca5fb52717860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &947013080
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3681,6 +3738,7 @@ GameObject:
   - component: {fileID: 976334652}
   - component: {fileID: 976334651}
   - component: {fileID: 976334650}
+  - component: {fileID: 976334653}
   m_Layer: 0
   m_Name: Suncream (2)
   m_TagString: Untagged
@@ -3825,6 +3883,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &976334653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976334648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95686dbd351938a4892ca5fb52717860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1015973730
 GameObject:
   m_ObjectHideFlags: 0
@@ -4579,10 +4649,10 @@ RectTransform:
   - {fileID: 1986982768}
   m_Father: {fileID: 1767645969}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 125, y: -50}
-  m_SizeDelta: {x: 250, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1282136682
 MonoBehaviour:
@@ -4933,10 +5003,10 @@ RectTransform:
   - {fileID: 323410584}
   m_Father: {fileID: 1767645969}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 125, y: -100}
-  m_SizeDelta: {x: 250, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1367492641
 MonoBehaviour:
@@ -5368,6 +5438,7 @@ GameObject:
   - component: {fileID: 1558673559}
   - component: {fileID: 1558673561}
   - component: {fileID: 1558673560}
+  - component: {fileID: 1558673562}
   m_Layer: 0
   m_Name: Rock (4)
   m_TagString: Untagged
@@ -5477,6 +5548,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1558673562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558673558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95686dbd351938a4892ca5fb52717860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1608017335
 GameObject:
   m_ObjectHideFlags: 0
@@ -5489,6 +5572,7 @@ GameObject:
   - component: {fileID: 1608017339}
   - component: {fileID: 1608017338}
   - component: {fileID: 1608017337}
+  - component: {fileID: 1608017340}
   m_Layer: 0
   m_Name: Suncream (1)
   m_TagString: Untagged
@@ -5633,6 +5717,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1608017340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608017335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95686dbd351938a4892ca5fb52717860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1627427224
 GameObject:
   m_ObjectHideFlags: 0
@@ -5644,6 +5740,7 @@ GameObject:
   - component: {fileID: 1627427225}
   - component: {fileID: 1627427227}
   - component: {fileID: 1627427226}
+  - component: {fileID: 1627427228}
   m_Layer: 0
   m_Name: Rock (2)
   m_TagString: Untagged
@@ -5753,6 +5850,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1627427228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1627427224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95686dbd351938a4892ca5fb52717860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1658985288
 GameObject:
   m_ObjectHideFlags: 0
@@ -14942,6 +15051,7 @@ GameObject:
   - component: {fileID: 1721379028}
   - component: {fileID: 1721379027}
   - component: {fileID: 1721379026}
+  - component: {fileID: 1721379029}
   m_Layer: 0
   m_Name: Suncream (3)
   m_TagString: Untagged
@@ -15086,6 +15196,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1721379029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721379024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95686dbd351938a4892ca5fb52717860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1732987817
 GameObject:
   m_ObjectHideFlags: 0
@@ -15119,7 +15241,7 @@ RectTransform:
   m_Father: {fileID: 610118879}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -15355,6 +15477,50 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 0
   m_ConstraintCount: 2
+--- !u!1 &1787884125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1787884127}
+  - component: {fileID: 1787884126}
+  m_Layer: 0
+  m_Name: LevelLoadScript
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1787884126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787884125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34822a0e29d634146ba396e69a655b46, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1787884127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787884125}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1849927336
 GameObject:
   m_ObjectHideFlags: 0
@@ -15688,6 +15854,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainLogic: {fileID: 323240605}
+  defaultSprite: {fileID: 0}
 --- !u!111 &1899377520
 Animation:
   m_ObjectHideFlags: 0
@@ -16165,10 +16332,10 @@ RectTransform:
   - {fileID: 1261516519}
   m_Father: {fileID: 1767645969}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 125, y: -150}
-  m_SizeDelta: {x: 250, y: 50}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1981430316
 MonoBehaviour:
@@ -16443,7 +16610,7 @@ RectTransform:
   m_Father: {fileID: 470836260}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -16692,3 +16859,4 @@ SceneRoots:
   m_Roots:
   - {fileID: 571420808}
   - {fileID: 376659957}
+  - {fileID: 1787884127}

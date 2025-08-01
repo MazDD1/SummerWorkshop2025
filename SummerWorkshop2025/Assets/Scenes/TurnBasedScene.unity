@@ -2053,7 +2053,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 21300000, guid: 5b1ed61ec663f164983f85e3f5855a83, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7fba443143af8d54da781d1e85661e4e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2440,7 +2440,7 @@ GameObject:
   - component: {fileID: 1285800228}
   m_Layer: 0
   m_Name: MainLogic
-  m_TagString: Untagged
+  m_TagString: TurnBasedLogic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2477,6 +2477,7 @@ MonoBehaviour:
   placeholderShell: {fileID: 11400000, guid: 8b05fcee8735f4d448973343b8d16cdc, type: 2}
   playerAnimator: {fileID: 909417677}
   enemyAnimator: {fileID: 475830970}
+  currentEnemy: {fileID: 11400000, guid: 33f174b78cbdd48489432425f463a895, type: 2}
   currentState: 0
 --- !u!4 &1285800229
 Transform:
@@ -2799,7 +2800,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -818.9, y: -294.4, z: 5.866347}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 475830968}
@@ -2845,7 +2846,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3625043607559282579, guid: 19fb86013d8c24d6cb8410c0aadf30fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bc7f3aee441c66647b0e14010f791696, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2930,7 +2931,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 6
-  m_Sprite: {fileID: 21300000, guid: a7e8e915aa20b46488ba21b7f0052ab3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9941cf71773710e4e8cdcc237f953363, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

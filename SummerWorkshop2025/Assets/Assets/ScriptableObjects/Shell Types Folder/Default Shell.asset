@@ -13,8 +13,16 @@ MonoBehaviour:
   m_Name: Default Shell
   m_EditorClassIdentifier: 
   shellName: Default Shell
-  shellImage: {fileID: 21300000, guid: fa5c2b5070bca7f4780030555e091868, type: 3}
+  shellImage: {fileID: 21300000, guid: 9941cf71773710e4e8cdcc237f953363, type: 3}
   moveSpeed: 200
-  healthStats: {fileID: 0}
-  playerAttacks: []
-  abilityAttacks: []
+  healthStats: {fileID: 11400000, guid: 056ff458cec09b44b8eb2bb39bb28e50, type: 2}
+  playerAttacks:
+  - {fileID: 11400000, guid: ee7da1fa58f95054aa9b2f452de9b04e, type: 2}
+  - {fileID: 11400000, guid: 0c6650d966072a64db946c508ecd1d5a, type: 2}
+  abilityAttacks:
+  - {fileID: 11400000, guid: 14aae05bf62dbd54dac36a56c26200ea, type: 2}
+  - {fileID: 11400000, guid: 6ed52509470b78d488c546955079e4f4, type: 2}
+  - {fileID: 0}
+  idleAnim: DefaultShellIdleAnimation
+  defendAnimStart: DefaultShellDefendStartAnimation
+  defendAnimEnd: DefaultShellDefendEndAnimation

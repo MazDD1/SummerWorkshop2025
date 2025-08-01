@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4503216bb0f062d4fab4dc9bdbae9c6b, type: 3}
   m_Name: Item1
   m_EditorClassIdentifier: 
-  itemName: PlaceholderValue1
+  itemName: Item 1
   itemImage: {fileID: 21300000, guid: 2c5ad79673caceb48a665ae33f4985e4, type: 3}

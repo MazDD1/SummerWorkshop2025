@@ -64,7 +64,9 @@ public class TurnBasedLogic : MonoBehaviour
     private Animator enemyAnimator;
 
 
+    public EnemyTypesSO currentEnemy;
 
+    ShellTypeSO equippedShell;
 
     public enum AttackFields
     {
@@ -212,13 +214,16 @@ public class TurnBasedLogic : MonoBehaviour
 
     void Load_Shell()
     {
-        ShellTypeSO equippedShell = placeholderShell;
+        equippedShell = placeholderShell;
         if (InventoryManagerScript.instance) {
             equippedShell = InventoryManagerScript.instance.currentShellType;
         }
         playerAttacks.attackStates = equippedShell.playerAttacks;
         abilityAttacks.attackStates = equippedShell.abilityAttacks;
         playerStats.baseStats = equippedShell.healthStats;
+
+        enemyAttacks.attackStates = currentEnemy.enemyAttacks;
+        enemyStats.baseStats = currentEnemy.healthStats;
     }
 
 
@@ -278,7 +283,7 @@ public class TurnBasedLogic : MonoBehaviour
         {
             if (playerStats.isImmune)
             {
-                playerAnimator.Play("DefendEndAnimation");
+                playerAnimator.Play(equippedShell.defendAnimEnd);
                 playerStats.isImmune = false;
             }
         }
@@ -332,7 +337,7 @@ public class TurnBasedLogic : MonoBehaviour
         menu.SetActive(false);
         if (playerAttacks.currentState.statChange == AttackStatsScriptableObject.StatChange.NullifyDamage)
         {
-            playerAnimator.Play("DefendStartAnimation");
+            playerAnimator.Play(equippedShell.defendAnimStart);
             playerStats.isImmune = true;
             return;
         }
@@ -428,8 +433,9 @@ public class TurnBasedLogic : MonoBehaviour
     public void Attack_End(GameObject entity)
     {
         print("attack ended");
-        Animation entityAnimation = player.GetComponent<Animation>();
-        entityAnimation.Stop();
+        playerAnimator.Play(equippedShell.idleAnim);
+        enemyAnimator.Play(currentEnemy.idleAnim);
+
         if (entity == player)
         {
             print("is a player attack");

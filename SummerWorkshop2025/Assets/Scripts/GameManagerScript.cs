@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManagerScript : MonoBehaviour
 {
     public static GameManagerScript instance;
 
-    [SerializeField]
-    private GameObject freeMoveScreen;
-    [SerializeField]
-    private GameObject turnBasedScreen;
+    public GameObject freeMoveScreen;
+    public GameObject turnBasedScreen;
+    public GameObject restSiteScreen;
+
     [SerializeField]
     private TurnBasedLogic turnBasedLogicScript;
 
@@ -23,18 +24,21 @@ public class GameManagerScript : MonoBehaviour
         if (instance != null && instance != this)
         {
             Destroy(this);
-        }
+        }   
         else
         {
             instance = this;
         }
 
         DontDestroyOnLoad(gameObject);
+
+        restSiteScreen = GameObject.FindGameObjectWithTag("RestSite");
     }
 
     // Start is called before the first frame update
     void Start()
     {
+
         FreeMoveActive = true;
     }
 
@@ -74,4 +78,11 @@ public class GameManagerScript : MonoBehaviour
             return;
         }
     }
+
+    public void UpdateReferencesToScreens()
+    {
+        turnBasedScreen = GameObject.FindGameObjectWithTag("TurnBased");
+        freeMoveScreen = GameObject.FindGameObjectWithTag("FreeMove");
+    }
+
 }
