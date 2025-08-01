@@ -1206,6 +1206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 213841261}
   - component: {fileID: 213841262}
+  - component: {fileID: 213841263}
   m_Layer: 0
   m_Name: GameEndTrigger
   m_TagString: Untagged
@@ -1222,7 +1223,7 @@ Transform:
   m_GameObject: {fileID: 213841260}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.45, y: -38.41, z: -0.08964468}
+  m_LocalPosition: {x: 0.45, y: -41.64, z: -0.08964468}
   m_LocalScale: {x: 22, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1257,7 +1258,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -1273,6 +1274,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &213841263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213841260}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c17d23de2c38a1418ff8c9eaa604fad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &264465311
 GameObject:
   m_ObjectHideFlags: 0
