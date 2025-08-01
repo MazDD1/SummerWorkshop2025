@@ -15,9 +15,14 @@ MonoBehaviour:
   shellName: Explosive Shell
   shellImage: {fileID: 21300000, guid: 189be40f1d551214d8cb2b2e87048409, type: 3}
   moveSpeed: 200
-  healthStats: {fileID: 0}
-  playerAttacks: []
-  abilityAttacks: []
-  idleAnim: {fileID: 0}
-  defendAnimStart: {fileID: 0}
-  defendAnimEnd: {fileID: 0}
+  healthStats: {fileID: 11400000, guid: de425a0e886704a4da5aff777ab97e23, type: 2}
+  playerAttacks:
+  - {fileID: 11400000, guid: d2a9d9d9cb5ecc345a41a2ddf3456ff9, type: 2}
+  - {fileID: 11400000, guid: cf6946f61a9d7524c96b5ea13a58a63d, type: 2}
+  abilityAttacks:
+  - {fileID: 11400000, guid: ef68bb9f098fa1d43af4d16fc8af5727, type: 2}
+  - {fileID: 11400000, guid: 9533c8d831332484e8135526d43757c1, type: 2}
+  - {fileID: 11400000, guid: c208de245a3616a4d8959c6e55b0b1b1, type: 2}
+  idleAnim: ExplosiveShellIdleAnimation
+  defendAnimStart: ExplosiveShellDefendStartAnimation
+  defendAnimEnd: ExplosiveShellDefendEndAnimation

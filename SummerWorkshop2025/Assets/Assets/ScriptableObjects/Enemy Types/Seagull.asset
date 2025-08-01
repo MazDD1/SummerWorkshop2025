@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Seagull
   m_EditorClassIdentifier: 
   healthStats: {fileID: 11400000, guid: 88a3d5f1290870f45a6e5498333b4855, type: 2}
-  enemyAttacks: []
-  idleAnim: 
+  enemyAttacks:
+  - {fileID: 11400000, guid: f79a9a892c5d99c4ea2f3400bfc2752e, type: 2}
+  idleAnim: SeagullIdleAnimation

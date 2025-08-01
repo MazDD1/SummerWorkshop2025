@@ -15,9 +15,13 @@ MonoBehaviour:
   shellName: Metal Shell
   shellImage: {fileID: 21300000, guid: 35d32912466d2a54a9f6cb75192e02b3, type: 3}
   moveSpeed: 100
-  healthStats: {fileID: 0}
-  playerAttacks: []
-  abilityAttacks: []
-  idleAnim: {fileID: 0}
-  defendAnimStart: {fileID: 0}
-  defendAnimEnd: {fileID: 0}
+  healthStats: {fileID: 11400000, guid: 552544f61b4cae9409b5df4174688b22, type: 2}
+  playerAttacks:
+  - {fileID: 11400000, guid: bff876f7a3645884bbac06d7ac8e1ece, type: 2}
+  - {fileID: 11400000, guid: 74a8275ee5aa0874ba3533e6df1e82d2, type: 2}
+  abilityAttacks:
+  - {fileID: 11400000, guid: fc965a407fe76444b83c0598352db0f5, type: 2}
+  - {fileID: 11400000, guid: e7ae2696d04005a499f2e250121f4a52, type: 2}
+  idleAnim: MetalShellIdleAnimation
+  defendAnimStart: MetalShellDefendStartAnimation
+  defendAnimEnd: MetalShellDefendEndAnimation
