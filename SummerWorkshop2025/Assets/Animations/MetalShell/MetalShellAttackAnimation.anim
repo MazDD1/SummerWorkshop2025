@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NoShellBuffAnimation
+  m_Name: MetalShellAttackAnimation
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -28,8 +28,17 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 0.35
-        value: {x: -2.57, y: 0.95201135, z: 0}
+        time: 0.23333333
+        value: {x: -1.3354168, y: -1.51, z: 0}
+        inSlope: {x: 11.78676, y: 0, z: 0}
+        outSlope: {x: 11.78676, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 0.36666667
+        value: {x: 1.7518122, y: -1.51, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -37,10 +46,10 @@ AnimationClip:
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
-        time: 0.7
-        value: {x: -2.57, y: -2.546844, z: 0}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
+        time: 0.6166667
+        value: {x: -1.0703406, y: -1.51, z: 0}
+        inSlope: {x: -6.823914, y: 0, z: 0}
+        outSlope: {x: -6.823914, y: 0, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
@@ -75,7 +84,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 21300000, guid: 82a0e59924afff0498cb27af5cb275b6, type: 3}
+      value: {fileID: 21300000, guid: f3e2e1b2f6bec054bb0f572ed43e6087, type: 3}
     attribute: m_Sprite
     path: Sprite
     classID: 212
@@ -118,7 +127,7 @@ AnimationClip:
     pptrCurveMapping:
     - {fileID: 21300000, guid: 7fba443143af8d54da781d1e85661e4e, type: 3}
     - {fileID: 21300000, guid: 7fba443143af8d54da781d1e85661e4e, type: 3}
-    - {fileID: 21300000, guid: 82a0e59924afff0498cb27af5cb275b6, type: 3}
+    - {fileID: 21300000, guid: f3e2e1b2f6bec054bb0f572ed43e6087, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -154,6 +163,33 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
+        time: 0.23333333
+        value: -1.3354168
+        inSlope: 11.78676
+        outSlope: 11.78676
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.36666667
+        value: 1.7518122
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.6166667
+        value: -1.0703406
+        inSlope: -6.823914
+        outSlope: -6.823914
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
         time: 1
         value: -2.57
         inSlope: 0
@@ -177,24 +213,6 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: -1.51
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.35
-        value: 0.95201135
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 0.7
-        value: -2.546844
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -252,8 +270,15 @@ AnimationClip:
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.98333335
+  - time: 0.48333332
     functionName: Player_Attack
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.98333335
+    functionName: Animation_End
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
