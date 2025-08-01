@@ -64,6 +64,8 @@ public class TurnBasedLogic : MonoBehaviour
     private Animator enemyAnimator;
 
 
+    public EnemyTypesSO currentEnemy;
+
     ShellTypeSO equippedShell;
 
     public enum AttackFields
@@ -219,6 +221,9 @@ public class TurnBasedLogic : MonoBehaviour
         playerAttacks.attackStates = equippedShell.playerAttacks;
         abilityAttacks.attackStates = equippedShell.abilityAttacks;
         playerStats.baseStats = equippedShell.healthStats;
+
+        enemyAttacks.attackStates = currentEnemy.enemyAttacks;
+        enemyStats.baseStats = currentEnemy.healthStats;
     }
 
 
@@ -429,6 +434,8 @@ public class TurnBasedLogic : MonoBehaviour
     {
         print("attack ended");
         playerAnimator.Play(equippedShell.idleAnim);
+        enemyAnimator.Play(currentEnemy.idleAnim);
+
         if (entity == player)
         {
             print("is a player attack");
