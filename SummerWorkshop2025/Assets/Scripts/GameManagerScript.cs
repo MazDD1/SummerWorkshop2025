@@ -14,6 +14,12 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField]
     private TurnBasedLogic turnBasedLogicScript;
 
+    public GameObject VictoryScreen;
+    public GameObject DeathScreen;
+    public GameObject restSiteWindow;
+
+    public EnemyTypesSO enemyTypesSO;
+
     [SerializeField]
     private bool FreeMoveActive;
 
@@ -23,7 +29,7 @@ public class GameManagerScript : MonoBehaviour
 
         if (instance != null && instance != this)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }   
         else
         {
@@ -74,6 +80,7 @@ public class GameManagerScript : MonoBehaviour
         if (turnBased)
         {
             FreeMoveActive = false;
+            turnBasedLogicScript.currentEnemy = enemyTypesSO;
             turnBasedLogicScript.currentState = TurnBasedLogic.BattleStates.Start;
             return;
         }
@@ -83,6 +90,25 @@ public class GameManagerScript : MonoBehaviour
     {
         turnBasedScreen = GameObject.FindGameObjectWithTag("TurnBased");
         freeMoveScreen = GameObject.FindGameObjectWithTag("FreeMove");
+        turnBasedLogicScript = GameObject.FindGameObjectWithTag("TurnBasedLogic").GetComponent<TurnBasedLogic>();
+    }
+
+    public void ShowDeathScreen()
+    {
+        freeMoveScreen.SetActive(false);
+        turnBasedScreen.SetActive(false);
+        restSiteScreen.SetActive(true);
+        restSiteWindow.SetActive(false);
+        DeathScreen.SetActive(true);
+    }
+    
+    public void ShowVictoryScreen()
+    {
+        freeMoveScreen.SetActive(false);
+        turnBasedScreen.SetActive(false);
+        restSiteScreen.SetActive(true);
+        restSiteWindow.SetActive(false);
+        VictoryScreen.SetActive(true);
     }
 
 }

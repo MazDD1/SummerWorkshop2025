@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class enemyCollision : MonoBehaviour
 {
+    public EnemyTypesSO enemyType;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,7 @@ public class enemyCollision : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player")
         {
+            GameManagerScript.instance.enemyTypesSO = enemyType;
             GameManagerScript.instance.SwitchToTurnBased(true);
             Destroy(gameObject);
         }

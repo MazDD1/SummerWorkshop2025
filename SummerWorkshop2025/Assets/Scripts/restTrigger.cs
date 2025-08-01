@@ -23,7 +23,7 @@ public class restTrigger : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Scene scene = SceneManager.GetActiveScene();
-            GameManagerScript.instance.restSiteScreen.SetActive(true);
+            GameManagerScript.instance.restSiteWindow.SetActive(true);
             if (scene.name == "CombinedScene")
             {
                 SceneManager.LoadScene("Level 2");

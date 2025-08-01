@@ -21,7 +21,7 @@ public class GameEndTrigger : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            // swap to win screen
+            GameManagerScript.instance.ShowVictoryScreen();
         }
 
     }

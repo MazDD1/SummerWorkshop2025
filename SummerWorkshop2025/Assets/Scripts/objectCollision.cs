@@ -16,11 +16,11 @@ public class objectCollision : MonoBehaviour
  
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Player" && InventoryManagerScript.instance.currentShellType.name == "Explosive Shell")
+        if (collision.gameObject.tag == "Player" && InventoryManagerScript.instance.currentShellType.shellName == "Explosive Shell")
         {
-            //switch to game over screen
+            GameManagerScript.instance.ShowDeathScreen();
         }
 
     }

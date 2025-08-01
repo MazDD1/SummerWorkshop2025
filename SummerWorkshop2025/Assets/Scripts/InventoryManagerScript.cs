@@ -35,7 +35,7 @@ public class InventoryManagerScript : MonoBehaviour
 
         if (instance != null && instance != this)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
         else
         {

@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TurnBasedScene.unity
     guid: a0672f8aab0a1a04997f9951fdf73db3
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 27a8b9a143605314c9f49d2cca7d03a3
+  - enabled: 1
     path: Assets/Scenes/CombinedScene.unity
     guid: af3cf2465739a614d8d91f974fa9865d
   - enabled: 1
